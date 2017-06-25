@@ -15,17 +15,4 @@ class Scrabble
   end
 
 
-  def score(word)
-    list_of_values = []
-    if word == '' || word == nil
-      list_of_values << 0
-    else
-      list_of_letters = word.upcase.chars
-      list_of_letters.each do |letter|
-        list_of_values << @values[letter]
-      end
-    end
-    list_of_values.reduce(:+)
-  end
-
 end

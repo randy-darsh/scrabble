@@ -1,7 +1,7 @@
 gem 'minitest'
 require_relative '../lib/scrabble'
 require 'minitest/autorun'
-require 'minitest/emoji'
+require 'minitest/pride'
 
 
 class ScrabbleTest < Minitest::Test
@@ -16,24 +16,6 @@ class ScrabbleTest < Minitest::Test
       "Y"=>4, "Z"=>10
     }
     assert_equal values, Scrabble.new.values
-  end
-
-  def test_it_can_score_a_single_letter
-    assert_equal 2, Scrabble.new.score("g")
-    assert_equal 5, Scrabble.new.score("k")
-  end
-
-  def test_it_can_score_a_word
-    assert_equal 7, Scrabble.new.score('Fart')
-    assert_equal 2, Scrabble.new.score('No')
-    assert_equal 7, Scrabble.new.score('Heat')
-    assert_equal 17, Scrabble.new.score('Whatever')
-    assert_equal 16, Scrabble.new.score('Zebra')
-  end
-
-  def test_empty_and_nil_scores_0
-    assert_equal 0, Scrabble.new.score("")
-    assert_equal 0, Scrabble.new.score(nil)
   end
 
 
