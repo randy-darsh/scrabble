@@ -1,4 +1,3 @@
-
 class Scrabble
   attr_reader :values
 
@@ -14,5 +13,16 @@ class Scrabble
     }
   end
 
+  def score(word)
+    word_score = 0
+    if word == nil
+      word_score = 0
+    else
+      word.chars.each do |character|
+        word_score += @values[character.upcase]
+      end
+    end
+    return word_score
+  end
 
 end
