@@ -1,8 +1,11 @@
 class Scrabble
-  attr_reader :values
 
-  def initialize
-    @values = {
+  def score(word)
+    1
+  end
+
+  def point_values
+    {
       "A"=>1, "B"=>3, "C"=>3, "D"=>2,
       "E"=>1, "F"=>4, "G"=>2, "H"=>4,
       "I"=>1, "J"=>8, "K"=>5, "L"=>1,
@@ -12,17 +15,4 @@ class Scrabble
       "Y"=>4, "Z"=>10
     }
   end
-
-  def score(word)
-    word_score = 0
-    if word == nil
-      word_score = 0
-    else
-      word.chars.each do |character|
-        word_score += @values[character.upcase]
-      end
-    end
-    return word_score
-  end
-
 end
